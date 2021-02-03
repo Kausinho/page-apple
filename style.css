@@ -20,24 +20,24 @@ header{
     text-align: center;
 }
 
-nav.menu ul{
+nav.menu-desktop ul{
     display: inline-block;
 }
 
-.menu li{
+.menu-desktop li{
     display: inline-block;
     color: white;
     margin: 0 30px;
 }
 
-.menu a{
+.menu-desktop a{
     color: white;
     text-decoration: none;
     margin: 0 5px;
     font-size: 14px;
 }
 
-.menu a.search-icon{
+.menu-desktop a.search-icon{
     margin-right: 20px;
 }
 
@@ -68,4 +68,54 @@ section.demo img{
     display: inline-block;
     max-width: 700px;
     width: 100%;
+}
+
+.menu-mobile{
+    display: none;
+}
+
+.btn-close{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .menu-desktop{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-menu{
+        cursor: pointer;
+        color: white;
+    }
+
+    .menu-mobile a{
+        color: white;
+    }
+
+    .items-mobile{
+        height: 0;
+        overflow: hidden;
+        transition: 1s;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        background-color: black;
+        width: 100%;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .items-mobile li{
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .items-mobile a{
+        text-decoration: none;
+    }
 }
