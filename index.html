@@ -10,7 +10,24 @@
 </head>
 <body>
     <header>
-        <nav class="menu">
+
+        <nav class="menu-mobile">
+            <a class="btn-close" href="">X</a>
+            <i class="btn-menu fa fa-bars"></i>
+            <a style="font-size: 19px;" href=""><i class="fab fa-apple"></i></a>
+            <ul class="items-mobile">
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">Ipad</a></li>
+                <li><a href="#">Iphone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+            <a href=""><i class="fas fa-shopping-bag"></i></a>
+        </nav>
+
+        <nav class="menu-desktop">
             <a href=""><i class="fab fa-apple"></i></a>
             <ul>
                 <li><a href="#">Mac</a></li>
@@ -35,5 +52,29 @@
         </div><!--links-compra-->
         <img src="phone.png" />
     </section><!--demo-->
+
+    <script>
+        var btnAbrir = document.querySelector('.btn-menu');
+        var btnClose = document.querySelector('.btn-close');
+        btnAbrir.addEventListener('click',(e)=>{
+            
+            let menu = document.querySelector('.items-mobile');
+
+            menu.style.height = 400;
+
+            btnAbrir.style.display = "none";
+            btnClose.style.display = "block";
+        });
+
+        btnClose.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let menu = document.querySelector('.items-mobile');
+
+            menu.style.height = 0;
+
+            btnAbrir.style.display = "block";
+            btnClose.style.display = "none";
+        })
+    </script>
 </body>
 </html>
